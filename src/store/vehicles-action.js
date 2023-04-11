@@ -4,7 +4,7 @@ const fetchVehicles = () => {
   return async (dispatch) => {
     const fetchedData = async () => {
       const response = await fetch(
-        "https://findfalcone.herokuapp.com/vehicles"
+        "https://findfalcone.geektrust.com/vehicles"
       );
 
       if (!response.ok) {

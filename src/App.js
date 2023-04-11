@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import { fetchPlanets } from "./store/planets-action";
 import fetchVehicles from "./store/vehicles-action";
 import Planets from "./components/Planets/Planets";
+import Vehicles from "./components/Vehicles/Vehicles";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ function App() {
     <div className="App mt-4">
       <Header />
       <Planets />
+      <Vehicles />
     </div>
   );
 }

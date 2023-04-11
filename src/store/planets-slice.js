@@ -4,25 +4,22 @@ const planetsSlice = createSlice({
   name: "planets",
   initialState: {
     planets: [],
-    selectedPlanets: [],
+    planet1: "",
+    planet2: "",
+    planet3: "",
+    planet4: "",
   },
   reducers: {
     setPlanets(state, action) {
       state.planets = action.payload.planets;
     },
-    selectPlanets(state, action) {
+    selectPlanet1(state, action) {
       const selectedPlanet = action.payload;
-
-      if (state.selectedPlanets.length > 0) {
-        const existingPlanet = state.selectedPlanets.includes(selectedPlanet);
-        if (existingPlanet) return;
-      }
-      state.selectedPlanets.push(selectedPlanet);
-      console.log(state.selectedPlanets.length);
+      state.selectPlanet1 = selectedPlanet;
+      console.log(state.selectPlanet1);
     },
   },
 });
 
 export const planetsActions = planetsSlice.actions;
-
 export default planetsSlice;

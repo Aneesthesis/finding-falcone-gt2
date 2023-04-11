@@ -27,7 +27,7 @@ export const fetchPlanets = () => {
   return async (dispatch) => {
     const fetchedData = async () => {
       console.log("yes");
-      const response = await fetch("https://findfalcone.herokuapp.com/planets");
+      const response = await fetch("https://findfalcone.geektrust.com/planets");
       if (!response.ok) {
         throw new Error("Problem in loading planets!");
       }

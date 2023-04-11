@@ -3,28 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { planetsActions } from "../../store/planets-slice";
 
 function Destination_1() {
-  const { destination, setDestination } = useState(" ");
+  const [destination, setDestination] = useState(" ");
   const dispatch = useDispatch();
   const { planets } = useSelector((state) => state.planets);
 
-  const D1_planets = [...planets];
-  console.log(D1_planets);
-
   function dropDownChangeHandler(e) {
-    const selectedPlanet = e.target.value;
-    setDestination(selectedPlanet);
-    dispatch(planetsActions.selectPlanets(selectedPlanet));
+    setDestination(e.target.value);
+    dispatch(planetsActions.selectPlanet1(e.target.value));
   }
 
   return (
     <div>
       <label>
         Destination 1
-        <select
-          onChange={dropDownChangeHandler}
-          defaultValue="select"
-          value={destination}
-        >
+        <select onChange={dropDownChangeHandler} value={destination}>
           {planets.map((planet) => (
             <option>{planet.name}</option>
           ))}
