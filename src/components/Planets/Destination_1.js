@@ -4,6 +4,7 @@ import { planetsActions } from "../../store/planets-slice";
 
 function Destination_1() {
   const [destination, setDestination] = useState(" ");
+
   const dispatch = useDispatch();
   const { planets } = useSelector((state) => state.planets);
 
@@ -13,15 +14,13 @@ function Destination_1() {
   }
 
   return (
-    <div>
-      <label>
-        Destination 1
-        <select onChange={dropDownChangeHandler} value={destination}>
-          {planets.map((planet) => (
-            <option>{planet.name}</option>
-          ))}
-        </select>
-      </label>
+    <div className="flex flex-col">
+      <label>Destination 1</label>
+      <select onChange={dropDownChangeHandler} value={destination}>
+        {planets.map((planet) => (
+          <option>{planet.name}</option>
+        ))}
+      </select>
     </div>
   );
 }

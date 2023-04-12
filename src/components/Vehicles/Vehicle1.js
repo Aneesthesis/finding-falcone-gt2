@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const Vehicle1 = () => {
   const { vehicles } = useSelector((state) => state.vehicles);
+  const { planet1 } = useSelector((state) => state.planets);
 
   return (
-    <ul>
+    <ul className="w-1/6">
       {vehicles.map((vehicle, index) => (
-        <>
-          <label>{vehicle.name}</label>
-          <input id={index} type="checkbox" />
-        </>
+        <div className="flex gap-1 ">
+          <input key={index} type="checkbox" />
+          <label>
+            {vehicle.name}
+            <span> ({vehicle.total_no})</span>
+          </label>
+        </div>
       ))}
     </ul>
   );

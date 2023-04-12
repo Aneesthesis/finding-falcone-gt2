@@ -15,8 +15,7 @@ const planetsSlice = createSlice({
     },
     selectPlanet1(state, action) {
       const selectedPlanet = action.payload;
-      state.selectPlanet1 = selectedPlanet;
-      console.log(state.selectPlanet1);
+      state.planet1 = selectedPlanet;
     },
   },
 });
