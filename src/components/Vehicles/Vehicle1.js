@@ -8,15 +8,16 @@ const Vehicle1 = () => {
 
   const dispatch = useDispatch();
 
+  let checkedBoxIndex;
   function checkBoxChangeHandler(e) {
-    console.log(e.target.name);
-    dispatch(vehiclesActions.setVehicle1(e.target.id));
+    checkedBoxIndex = e.target.id;
+    dispatch(vehiclesActions.setVehicle1(checkedBoxIndex));
   }
 
   return (
     <ul className="w-1/6" onChange={checkBoxChangeHandler}>
       {vehicles.map((vehicle, index) => (
-        <div className="flex gap-1 ">
+        <div className="flex gap-1">
           <input id={index} name={vehicle.name} type="checkbox" />
           <label>
             {vehicle.name}
