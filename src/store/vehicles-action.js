@@ -15,7 +15,7 @@ const fetchVehicles = () => {
       return data;
     };
     try {
-      const vehiclesData = await fetchedData();
+      let vehiclesData = await fetchedData();
       dispatch(vehiclesActions.setVehicles({ vehicles: vehiclesData || [] }));
     } catch (error) {
       console.log(error.message);
