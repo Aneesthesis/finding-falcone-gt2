@@ -16,9 +16,14 @@ const vehiclesSlice = createSlice({
       state.vehicles = action.payload.vehicles;
     },
     setVehicle1(state, action) {
-      const selectedVehiclesIndex = action.payload;
+      const selectedVehiclesIndex = action.payload.selectedCBIndex;
+      const deselectedVehicleIndex = action.payload.deselectedCBIndex;
       state.vehicle1 = state.vehicles[selectedVehiclesIndex];
       state.vehicle1.total_no -= 1;
+
+      if (deselectedVehicleIndex || deselectedVehicleIndex === 0) {
+        state.vehicles[deselectedVehicleIndex].total_no += 1;
+      }
     },
   },
 });
