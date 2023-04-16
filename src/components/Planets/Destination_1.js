@@ -16,7 +16,14 @@ function Destination_1() {
   return (
     <div className="flex flex-col">
       <label>Destination 1</label>
-      <select onChange={dropDownChangeHandler} value={destination}>
+      <select
+        onChange={dropDownChangeHandler}
+        value={destination}
+        placeholder="Select"
+      >
+        <option disabled value=" ">
+          Select
+        </option>
         {planets.map((planet) => (
           <option>{planet.name}</option>
         ))}

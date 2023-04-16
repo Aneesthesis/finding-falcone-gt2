@@ -6,7 +6,6 @@ const Vehicle1 = () => {
   const { vehicles } = useSelector((state) => state.vehicles);
   const { planet1 } = useSelector((state) => state.planets);
   const [checkedBoxIndex, setCheckedBoxIndex] = useState();
-
   const dispatch = useDispatch();
 
   function checkBoxChangeHandler(e) {
@@ -19,8 +18,9 @@ const Vehicle1 = () => {
     );
   }
 
-  return (
+  return planet1 ? (
     <ul className="w-1/6" onChange={checkBoxChangeHandler}>
+      <h2>Select Vehicle-1</h2>
       {vehicles.map((vehicle, index) => (
         <div className="flex gap-1">
           <input
@@ -36,6 +36,8 @@ const Vehicle1 = () => {
         </div>
       ))}
     </ul>
+  ) : (
+    ""
   );
 };
 
