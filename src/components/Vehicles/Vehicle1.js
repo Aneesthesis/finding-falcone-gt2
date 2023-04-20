@@ -28,6 +28,7 @@ const Vehicle1 = () => {
             name={vehicle.name}
             type="checkbox"
             checked={index === checkedBoxIndex}
+            disabled={planet1.distance > vehicle.max_distance}
           />
           <label>
             {vehicle.name}

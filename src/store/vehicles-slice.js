@@ -25,6 +25,36 @@ const vehiclesSlice = createSlice({
         state.vehicles[deselectedVehicleIndex].total_no += 1;
       }
     },
+    setVehicle2(state, action) {
+      const selectedVehiclesIndex = action.payload.selectedCBIndex;
+      const deselectedVehicleIndex = action.payload.deselectedCBIndex;
+      state.vehicle2 = state.vehicles[selectedVehiclesIndex];
+      state.vehicle2.total_no -= 1;
+
+      if (deselectedVehicleIndex || deselectedVehicleIndex === 0) {
+        state.vehicles[deselectedVehicleIndex].total_no += 1;
+      }
+    },
+    setVehicle3(state, action) {
+      const selectedVehiclesIndex = action.payload.selectedCBIndex;
+      const deselectedVehicleIndex = action.payload.deselectedCBIndex;
+      state.vehicle3 = state.vehicles[selectedVehiclesIndex];
+      state.vehicle3.total_no -= 1;
+
+      if (deselectedVehicleIndex || deselectedVehicleIndex === 0) {
+        state.vehicles[deselectedVehicleIndex].total_no += 1;
+      }
+    },
+    setVehicle4(state, action) {
+      const selectedVehiclesIndex = action.payload.selectedCBIndex;
+      const deselectedVehicleIndex = action.payload.deselectedCBIndex;
+      state.vehicle4 = state.vehicles[selectedVehiclesIndex];
+      state.vehicle4.total_no -= 1;
+
+      if (deselectedVehicleIndex || deselectedVehicleIndex === 0) {
+        state.vehicles[deselectedVehicleIndex].total_no += 1;
+      }
+    },
   },
 });
 

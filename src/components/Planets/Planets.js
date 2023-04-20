@@ -8,7 +8,7 @@ const Planets = () => {
   return (
     <div className="relative">
       <h2 className="text-center">Select planets you want to search in...</h2>
-      <div className="flex gap-20">
+      <div className="flex gap-80">
         <Destination_1 />
         <Destination_2 />
         <Destination_3 />

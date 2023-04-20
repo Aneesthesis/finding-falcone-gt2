@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { planetsActions } from "../../store/planets-slice";
 
@@ -10,9 +10,12 @@ function Destination_2() {
 
   //conditionally rendering destination2
   if (planet1 && vehicle1) {
+    console.log(planet1.name);
+
     function dropDownChangeHandler(e) {
-      setDestination(e.target.value);
-      dispatch(planetsActions.selectPlanet2(e.target.value));
+      const destination = JSON.parse(e.target.value);
+      setDestination(e.target.value.name);
+      dispatch(planetsActions.selectPlanet2(destination));
     }
 
     return (
@@ -27,9 +30,9 @@ function Destination_2() {
             Select
           </option>
           {planets
-            .filter((planet) => planet.name !== planet1)
+            .filter((planet) => planet.name !== planet1.name)
             .map((planet) => (
-              <option>{planet.name}</option>
+              <option value={JSON.stringify(planet)}>{planet.name}</option>
             ))}
         </select>
       </div>
