@@ -18,6 +18,7 @@ function Destination_1() {
     <div className="flex flex-col">
       <label>Destination 1</label>
       <select
+        disabled={destination ? false : true}
         value={destination}
         placeholder="Select"
         onChange={dropDownChangeHandler}
